@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SGPA Increment Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+        <h1>SGPA Calculator</h1>
+        <p class="subtitle">Calculate your new SGPA after clearing subjects</p>
+        
+        <div class="formula-box">
+            <h3>Formula</h3>
+            <div class="formula">Increase in SGPA = Σ(Subject Grade × Credit) / Total Credits</div>
+            <div class="formula">New SGPA = Old SGPA + Increase in SGPA</div>
+        </div>
+
+        <div class="input-group">
+            <label for="current-sgpa">Current SGPA</label>
+            <input type="number" id="current-sgpa" placeholder="Enter current SGPA" step="0.01" min="0" max="10">
+        </div>
+
+        <div class="input-group">
+            <label for="total-credits">Total Credits (TC)</label>
+            <input type="number" id="total-credits" placeholder="Enter total credits" step="1" min="1">
+        </div>
+
+        <div class="input-group">
+            <label for="num-subjects">Number of Subjects to Clear</label>
+            <select id="num-subjects" onchange="generateSubjects()">
+                <option value="">Select number of subjects</option>
+                <option value="1">1 Subject</option>
+                <option value="2">2 Subjects</option>
+                <option value="3">3 Subjects</option>
+                <option value="4">4 Subjects</option>
+                <option value="5">5 Subjects</option>
+                <option value="6">6 Subjects</option>
+                <option value="7">7 Subjects</option>
+                <option value="8">8 Subjects</option>
+                <option value="9">9 Subjects</option>
+                <option value="10">10 Subjects</option>
+            </select>
+        </div>
+
+        <div class="subjects-container" id="subjects-container">
+        </div>
+
+        <button class="calculate-btn" onclick="calculateSGPA()">Calculate New SGPA</button>
+
+        <div id="result" class="result"></div>
+    </div>
+
+  
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
